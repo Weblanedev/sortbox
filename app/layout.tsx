@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     icon: [
       {
         media: '(prefers-color-scheme: light)',
-        url: 'https://th.bing.com/th/id/OIP.dreczzyMINKRpwhHEx9bhwHaJR?rs=1&pid=ImgDetMain',
-        href: 'https://th.bing.com/th/id/OIP.dreczzyMINKRpwhHEx9bhwHaJR?rs=1&pid=ImgDetMain',
+        url: 'https://th.bing.com/th/id/R.67ee88df7f8fb15d9c54a261bb38a234?rik=gAWDR%2fHFjEpJMA&pid=ImgRaw&r=0',
+        href: 'https://th.bing.com/th/id/R.67ee88df7f8fb15d9c54a261bb38a234?rik=gAWDR%2fHFjEpJMA&pid=ImgRaw&r=0',
       },
       {
         media: '(prefers-color-scheme: dark)',
-        url: 'https://th.bing.com/th/id/OIP.dreczzyMINKRpwhHEx9bhwHaJR?rs=1&pid=ImgDetMain',
-        href: 'https://th.bing.com/th/id/OIP.dreczzyMINKRpwhHEx9bhwHaJR?rs=1&pid=ImgDetMain',
+        url: 'https://th.bing.com/th/id/R.67ee88df7f8fb15d9c54a261bb38a234?rik=gAWDR%2fHFjEpJMA&pid=ImgRaw&r=0',
+        href: 'https://th.bing.com/th/id/R.67ee88df7f8fb15d9c54a261bb38a234?rik=gAWDR%2fHFjEpJMA&pid=ImgRaw&r=0',
       },
     ],
   },
@@ -46,7 +46,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Providers>
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
-              <SiteBlob />
+              {/* <SiteBlob /> */}
               <div className="flex-1">{children}</div>
 
               <SiteFooter />

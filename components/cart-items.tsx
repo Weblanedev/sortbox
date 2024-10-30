@@ -20,7 +20,7 @@ export function CartItems() {
   const { toast } = useToast()
 
   function removeCartItem(product: Product) {
-    removeItem(product._id)
+    removeItem(product.id)
     toast({
       title: `${product.name} removed`,
       description: "product was removed from cart",
@@ -90,7 +90,7 @@ export function CartItems() {
                   max={9}
                   value={product.quantity}
                   onChange={(event) =>
-                    setItemQuantity(product._id, Number(event.target.value))
+                    setItemQuantity(product.id, Number(event.target.value))
                   }
                 />
                 <div className="absolute right-0 top-0">

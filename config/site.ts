@@ -1,15 +1,17 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "FullTape",
+  name: "SortBox",
   description:
-    "Fulltape is a leading marketing technology service specializing in innovative digital solutions and Wi-Fi extenders. We empower businesses to reach their full potential by enhancing both their digital marketing strategies and connectivity infrastructure. Our mission is to provide businesses with the tools they need to succeed in the competitive online marketplace, while also ensuring fast, reliable internet access through our top-quality Wi-Fi extenders.",
+    "        At Sortbox, we specialize in advanced battery power stations that provide reliable and sustainable energy solutions for your home or business.",
   footer: [
-    { name: "Home", href: "/" },
+    // { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Terms & Conditions", href: "#" },
-    { name: "Shipping & Return Policy", href: "#" },
-    { name: "Privacy Policy", href: "#" },
-    { name: "FAQ", href: "#" },
+    // { name: "Terms & Conditions", href: "#" },
+    // { name: "Shipping & Return Policy", href: "#" },
+    // { name: "Privacy Policy", href: "#" },
+    { name: "Products", href: "/products" },
+    // { name: "FAQ", href: "#" },
+    { name: "Contact", href: "/contact" },
   ],
 }

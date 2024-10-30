@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils"
 import { ProductFilters } from "@/components/product-filters"
 import { ProductGrid } from "@/components/product-grid"
 import { ProductSort } from "@/components/product-sort"
+import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 interface Props {
   searchParams: {
@@ -53,50 +55,59 @@ export default async function Page({ searchParams }: Props) {
 
     }`
   )
-  console.log(products)
-  console.log(inventory)
   return (
     <div>
-      <div className="px-4 pt-20 text-center">
-        <h1 className="text-4xl font-extrabold tracking-normal">
-          {siteConfig.name}
+      <div
+        className="relative px-4 pt-20 text-center bg-[url('https://images.pexels.com/photos/9875683/pexels-photo-9875683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center"
+        style={{ minHeight: '50vh' }}
+      >
+        <div className="absolute inset-0 bg-black opacity-30"></div>
+        <h1 className="text-4xl font-extrabold tracking-normal text-white z-1 relative">
+          Join the Solar Revolution! Start Your Journey Here!
         </h1>
-        <p className="mx-auto mt-4 max-w-3xl leading-[30px] text-base">
-          {siteConfig.description}
+        <p className="mx-auto mt-4 max-w-3xl leading-[30px] text-base text-white z-1 relative">
+          {siteConfig.description}. With our easy installation process, expert support, and commitment to sustainability, transitioning to solar energy has never been easier.
         </p>
+        <div>
+          <a href="/products">
+            <Button className="w-fit mt-10 z-1 relative">
+              Get Started
+            </Button>
+          </a>
+        </div>
       </div>
-      <div>
-        <main className="mx-auto max-w-6xl px-6">
-          <div className="flex items-center justify-between border-b border-gray-200 pb-4 pt-24 dark:border-gray-800">
-            <h1 className="text-xl font-bold tracking-tight sm:text-2xl">
-              {products.length} result{products.length === 1 ? "" : "s"}
-            </h1>
-            {/* Product Sort */}
-            <ProductSort />
-          </div>
 
-          <section aria-labelledby="products-heading" className="pb-24 pt-6">
-            <h2 id="products-heading" className="sr-only">
-              Products
-            </h2>
-            {/* lg:grid-cols-4 */}
-            <div
-              className={cn(
-                "grid grid-cols-1 gap-x-8 gap-y-10",
-                products.length > 0
-                  ? "lg:grid-cols-4"
-                  : "lg:grid-cols-[1fr_3fr]"
-              )}
-            >
-              <div className="hidden lg:block">
-                {/* Product filters */}
-                {/* <ProductFilters /> */}
-              </div>
-              {/* Product grid */}
-              <ProductGrid products={inventory} />
-            </div>
-          </section>
-        </main>
+      <div className="py-32">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+        <div className="md:w-1/2 md:pr-8">
+          <h2 className="text-3xl font-bold mb-6 text-primary dark:text-secondary">Why Us?</h2>
+          <p className="text-gray-700">
+            At Sortbox, we are dedicated to revolutionizing energy solutions through innovative battery power stations. Our mission is to empower individuals and businesses with reliable, sustainable energy options that promote energy independence and environmental responsibility. With a focus on quality, efficiency, and customer satisfaction, we strive to provide the tools necessary for a cleaner, greener future. Join us on our journey to harness the power of renewable energy and make a positive impact on our planet.
+          </p>
+        </div>
+        <div className="md:w-1/2 mt-6 md:mt-0">
+          <Image 
+            src="https://images.pexels.com/photos/164572/pexels-photo-164572.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" // Replace with your image path
+            alt="Sortbox Battery Power Station"
+            width={500} // Adjust width as needed
+            height={400} // Adjust height as needed
+            className="rounded-lg shadow-md"
+          />
+        </div>
+      </div>
+    </div>
+
+      <div className="py-12 text-center text-primary dark:text-secondary">
+        <h2 className="text-3xl font-bold mb-4">Ready to Make the Switch?</h2>
+        <p className="mb-6">
+          Join countless others in embracing sustainable energy solutions with Sortbox.
+        </p>
+        <a href="/contact">
+          <Button>
+            Contact Us Today
+          </Button>
+
+        </a>
       </div>
     </div>
   )

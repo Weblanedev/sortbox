@@ -10,7 +10,8 @@ import { Input } from "@/components/ui/input"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
 
-;(" ")
+;import { siteConfig } from "@/config/site"
+(" ")
 
 export function SiteHeader() {
   const pathname = usePathname()
@@ -32,17 +33,18 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between space-x-4 px-6 sm:space-x-0">
         <MainNav />
-        <form className="hidden items-center lg:inline-flex">
-          <Input
-            id="search"
-            name="search"
-            type="search"
-            autoComplete="off"
-            placeholder="Search products..."
-            className="h-9 lg:w-[300px]"
-            defaultValue={defaultSearchQuery}
-          />
-        </form>
+        <nav
+          className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
+          aria-label="Footer"
+        >
+          {siteConfig.footer.map((item) => (
+            <div key={item.name} className="pb-6">
+              <Link href={item.href} className="text-sm leading-6">
+                {item.name}
+              </Link>
+            </div>
+          ))}
+        </nav>
         <div className="flex items-center space-x-1">
           <Link href="/cart">
             <Button size="sm" variant="ghost">
@@ -52,14 +54,6 @@ export function SiteHeader() {
             </Button>
           </Link>
           <ThemeToggle />
-
-          {process.env.NODE_ENV === "development" && (
-            <Link href="/studio">
-              <Button size="sm" variant="ghost">
-                <Edit className="h-5 w-5" />
-              </Button>
-            </Link>
-          )}
         </div>
       </div>
     </header>

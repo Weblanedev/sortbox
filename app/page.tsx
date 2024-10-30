@@ -59,7 +59,7 @@ export default async function Page({ searchParams }: Props) {
     <div>
       <div
         className="relative px-4 pt-20 text-center bg-[url('https://images.pexels.com/photos/9875683/pexels-photo-9875683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center"
-        style={{ minHeight: '50vh' }}
+        style={{ minHeight: '60vh' }}
       >
         <div className="absolute inset-0 bg-black opacity-30"></div>
         <h1 className="text-4xl font-extrabold tracking-normal text-white z-1 relative">
